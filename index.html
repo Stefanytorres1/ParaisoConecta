@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PARAÍSO CONECTA</title>
+<style>
+:root{--ink:#062b38;--teal:#10b7ad;--blue:#2563eb;--green:#16a34a;--orange:#f59e0b;--bg:#f5fafb;--line:#dbe8eb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.nav{position:sticky;top:0;z-index:20;background:#f5fafbea;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.navin{max-width:1180px;margin:auto;height:70px;padding:0 20px;display:flex;align-items:center;gap:20px}.brand{border:0;background:none;font-weight:900;color:var(--ink);font-size:15px}.brand b{color:var(--teal)}.mark{display:inline-grid;place-items:center;width:34px;height:34px;margin-right:7px;border-radius:11px;color:white;background:linear-gradient(135deg,var(--teal),var(--blue));vertical-align:middle}
+nav{margin-left:auto;display:flex;gap:4px}nav button{border:0;background:none;padding:9px 11px;color:#60757c;border-radius:10px}nav button:hover{background:#e5f3f3;color:var(--ink)}
+.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:800;display:inline-flex;align-items:center;gap:8px}.primary{color:white;background:linear-gradient(135deg,var(--teal),var(--blue));box-shadow:0 10px 25px #10b7ad33}.outline{background:white;border:1px solid var(--line);color:var(--ink)}
+.hero{background:radial-gradient(circle at 80% 25%,#10b7ad44,transparent 30%),linear-gradient(135deg,#062b38,#0b5360);color:white;overflow:hidden}.heroIn{max-width:1180px;margin:auto;padding:85px 20px 115px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px}.eyebrow,.kicker{font-size:11px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.eyebrow{color:#a9eee7}.hero h1{font-size:clamp(45px,6vw,72px);line-height:.98;letter-spacing:-.055em;margin:20px 0}.hero h1 span{color:#4be2cf}.hero p{font-size:18px;line-height:1.65;color:#d3e5e9;max-width:620px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.note{font-size:12px;color:#b9ced3;margin-top:15px}
+.visual{height:450px;display:grid;place-items:center}.orb{width:430px;height:430px;border-radius:48%;position:relative;background:linear-gradient(145deg,#ffffff18,#ffffff04);border:1px solid #ffffff25;box-shadow:inset 0 0 90px #10b7ad15,0 35px 80px #0003}.road{position:absolute;inset:0;background:linear-gradient(35deg,transparent 45%,#ffffff16 46%,transparent 48%),linear-gradient(100deg,transparent 37%,#ffffff12 38%,transparent 40%),linear-gradient(160deg,transparent 62%,#ffffff12 63%,transparent 65%);transform:rotate(-8deg) scale(1.2)}.pin{position:absolute;width:14px;height:14px;border:3px solid white;border-radius:50%;background:#f59e0b;box-shadow:0 0 0 8px #f59e0b22}.p1{left:22%;top:30%}.p2{right:20%;top:25%;background:#10b7ad}.p3{left:28%;bottom:22%;background:#ef4444}.p4{right:25%;bottom:18%;background:#2563eb}.label{position:absolute;left:43%;top:45%;background:white;color:var(--ink);padding:8px 12px;border-radius:20px;font-weight:800;font-size:12px}.float{position:absolute;background:#fffffff2;color:var(--ink);padding:12px 15px;border-radius:15px;box-shadow:0 15px 30px #0002;font-size:12px}.f1{left:-5px;bottom:45px}.f2{right:-5px;top:70px}.float strong{font-size:20px;display:block}
+.section{max-width:1180px;margin:auto;padding:80px 20px}.alt{max-width:none;background:#edf5f6;padding-left:max(20px,calc((100vw - 1140px)/2));padding-right:max(20px,calc((100vw - 1140px)/2))}.center{text-align:center}.kicker{color:var(--teal)}h2{font-size:clamp(32px,4vw,48px);letter-spacing:-.04em;margin:10px 0}h2 span,h1 span{color:var(--teal)}.sub{color:#667c83;line-height:1.7}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:35px}.stat{background:white;border:1px solid var(--line);border-radius:20px;padding:22px;transition:.2s}.stat:hover,.card:hover{transform:translateY(-5px);box-shadow:0 18px 45px #062b3814}.ico{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#e3f5f3;color:var(--teal);margin-bottom:16px}.num{font-size:34px;font-weight:900}.muted{color:#667c83;font-size:13px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.step{padding:18px}.circle{width:62px;height:62px;border-radius:20px;background:white;border:1px solid var(--line);display:grid;place-items:center;color:var(--teal);margin:13px 0}.step p{color:#667c83;line-height:1.6;font-size:14px}
+.banner{border-radius:26px;padding:45px;background:linear-gradient(135deg,#062b38,#0b5963);color:white;display:flex;align-items:center;justify-content:space-between;gap:30px}.banner p{color:#c9dfe3;line-height:1.6;max-width:650px}
+.empty{padding:45px;text-align:center;border:1px dashed #afc7cc;border-radius:20px;background:#ffffff99}.empty p{max-width:560px;margin:10px auto 20px;color:#667c83;line-height:1.6}
+.form{max-width:950px}.panel{background:white;border:1px solid var(--line);border-radius:20px;padding:25px;margin-top:18px}.field{display:block;margin-bottom:18px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;padding:12px;border:1px solid var(--line);border-radius:11px;background:#fbfdfe}.field textarea{min-height:120px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.cat{border:1px solid var(--line);background:#fbfdfe;border-radius:12px;padding:12px;text-align:left;font-weight:700;color:#4d656c}.cat.sel{border-color:var(--teal);background:#eaf9f7;color:#087b73}.drop{border:2px dashed #aac8ce;padding:35px;text-align:center;border-radius:16px;background:#f7fbfb}.drop input{display:none}.formEnd{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:18px}.success{text-align:center;max-width:600px;margin:40px auto;background:white;padding:45px;border-radius:25px;border:1px solid var(--line);box-shadow:0 18px 50px #062b3812}.code{font-size:30px;font-weight:900;letter-spacing:.08em;background:#edf8f7;padding:15px;border-radius:12px;margin:22px 0}
+.search{display:flex;max-width:700px;margin:25px auto;background:white;border:1px solid var(--line);border-radius:15px;padding:6px}.search input{flex:1;border:0;outline:0;padding:10px}.case{max-width:800px;margin:35px auto;background:white;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 15px 45px #062b3810}.status{display:inline-block;background:#eaf9f7;color:#087b73;padding:7px 10px;border-radius:99px;font-size:12px;font-weight:900}.timeline{border-left:2px solid #dce8eb;margin:25px 0 0 14px;padding-left:25px}.event{position:relative;padding-bottom:25px}.event:before{content:"";position:absolute;left:-33px;top:2px;width:13px;height:13px;background:var(--teal);border:4px solid #e8f8f6;border-radius:50%}.event small{color:#80959b}.event p{color:#667c83;font-size:13px}
+footer{background:#05252f;color:#b9d0d5;padding:45px 20px}.foot{max-width:1140px;margin:auto;display:flex;justify-content:space-between;gap:30px}.foot p{max-width:430px;line-height:1.6;font-size:13px}.links{display:flex;gap:16px;flex-wrap:wrap}.links button{border:0;background:none;color:#b9d0d5}.links button:hover{color:white}
+.toast{position:fixed;right:20px;bottom:20px;background:#062b38;color:white;padding:13px 17px;border-radius:12px;z-index:50}
+@media(max-width:850px){nav{display:none}.heroIn{grid-template-columns:1fr}.visual{height:330px}.orb{width:300px;height:300px}.stats,.steps{grid-template-columns:1fr 1fr}.banner{display:block}.banner .btn{margin-top:20px}.cats{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.navin{height:62px}.heroIn{padding:65px 18px 85px}.hero h1{font-size:46px}.section{padding:60px 17px}.stats,.steps,.two{grid-template-columns:1fr}.cats{grid-template-columns:1fr 1fr}.formEnd{display:block}.formEnd .btn{width:100%;margin-top:15px}.foot{display:block}.links{margin-top:25px}.float{transform:scale(.85)}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="navin">
+<button class="brand" onclick="go('inicio')"><span class="mark">✦</span> PARAÍSO <b>CONECTA</b></button>
+<nav><button onclick="go('inicio')">Inicio</button><button onclick="go('reportar')">Reportar</button><button onclick="go('seguimiento')">Seguimiento</button><button onclick="go('mapa')">Mapa</button><button onclick="go('comunidad')">Comunidad</button><button onclick="go('info')">Información</button></nav>
+<button class="btn primary" onclick="go('reportar')">＋ Crear reporte</button>
+</div></header>
+<div id="app"></div>
+<footer><div class="foot"><div><button class="brand" onclick="go('inicio')"><span class="mark">✦</span> PARAÍSO <b>CONECTA</b></button><p>Tecnología para escuchar, visibilizar y transformar nuestra comunidad.</p></div><div class="links"><button onclick="go('inicio')">Inicio</button><button onclick="go('reportar')">Crear reporte</button><button onclick="go('seguimiento')">Seguimiento</button><button onclick="go('mapa')">Mapa</button><button onclick="go('info')">Información</button></div></div></footer>
+<script>
+const CATS=[['Seguridad','security'],['Alumbrado público','lighting'],['Basuras','trash'],['Vías y calles','roads'],['Medio ambiente','environment'],['Alcantarillado','drainage'],['Espacios públicos','public'],['Otro','other']];
+
+// IMPORTANTE: pega aquí la URL de la aplicación web de Google Apps Script (termina en /exec).
+const CRM_WEB_APP_URL = 'PEGA_AQUI_TU_URL_DE_APPS_SCRIPT';
+let reports=JSON.parse(localStorage.getItem('pc_reports')||'[]');
+let selected='';
+function save(){localStorage.setItem('pc_reports',JSON.stringify(reports))}
+function go(v){location.hash=v;render()}
+window.addEventListener('hashchange',render);
+function render(){let v=location.hash.slice(1)||'inicio';if(v==='inicio')home();else if(v==='reportar')form();else if(v==='seguimiento')tracking();else if(v==='mapa')mapa();else if(v==='comunidad')community();else info()}
+function home(){app.innerHTML=`<section class="hero"><div class="heroIn"><div><div class="eyebrow">● Plataforma ciudadana del barrio Paraíso</div><h1>Una comunidad que <span>reporta,</span><br> participa y transforma.</h1><p>Registra las problemáticas de tu barrio, comparte evidencias y consulta el avance de cada reporte.</p><div class="actions"><button class="btn primary" onclick="go('reportar')">Reportar una problemática →</button><button class="btn outline" onclick="go('seguimiento')">Consultar mi reporte</button></div><div class="note">🔒 La información personal de los reportantes no se publica.</div></div><div class="visual"><div class="orb"><div class="road"></div><div class="pin p1"></div><div class="pin p2"></div><div class="pin p3"></div><div class="pin p4"></div><div class="label">📍 Paraíso</div><div class="float f1"><strong>${reports.filter(x=>x.status==='Solucionado').length}</strong>solucionados</div><div class="float f2"><strong>${reports.length}</strong>reportes</div></div></div></div></section>
+<section class="section center"><div class="kicker">EN TIEMPO REAL</div><h2>La voz del barrio, <span>visible.</span></h2><p class="sub">Estos datos se alimentan con los reportes registrados en esta instalación.</p><div class="stats">${stat('⚠️',reports.length,'Reportes registrados')}${stat('◷',reports.filter(x=>x.status==='En proceso'||x.status==='En revisión').length,'Casos en proceso')}${stat('✓',reports.filter(x=>x.status==='Solucionado').length,'Problemáticas solucionadas')}${stat('👤',new Set(reports.map(x=>x.contact).filter(Boolean)).size,'Habitantes participantes')}</div></section>
+<section class="section alt"><div class="center"><div class="kicker">ASÍ FUNCIONA</div><h2>Del reporte a la <span>solución.</span></h2></div><div class="steps">${step('01','💬','Reporta','Describe la problemática de tu comunidad.')}${step('02','▣','Evidencia','Agrega fotografías, ubicación y tu testimonio.')}${step('03','⌕','Seguimiento','Obtén un código único para consultar tu caso.')}${step('04','✓','Solución','Consulta las actualizaciones y el estado de tu reporte.')}</div></section>
+<section class="section"><div class="banner"><div><div class="kicker">PARTICIPACIÓN</div><h2>Tu reporte puede generar <span>un cambio.</span></h2><p>Cada reporte ayuda a conocer mejor las necesidades de nuestra comunidad y permite hacer seguimiento a las situaciones que afectan al barrio.</p></div><button class="btn primary" onclick="go('reportar')">Participar en la comunidad →</button></div></section>
+<section class="section alt"><div class="center"><div class="kicker">VISIBILIDAD</div><h2>Lo que está pasando <span>en nuestro barrio.</span></h2></div>${reports.length?cards(reports.slice(0,3)):empty()}</section>`}
+function stat(i,n,l){return `<div class="stat"><div class="ico">${i}</div><div class="num">${n}</div><div class="muted">${l}</div></div>`}
+function step(n,i,t,p){return `<div class="step"><small class="kicker">${n}</small><div class="circle">${i}</div><h3>${t}</h3><p>${p}</p></div>`}
+function empty(){return `<div class="empty"><h3>Aún no hay reportes públicos</h3><p>Los indicadores están en cero porque esta instalación comienza con una base limpia. El primer reporte puede comenzar aquí.</p><button class="btn primary" onclick="go('reportar')">Crear el primer reporte →</button></div>`}
+function cards(rs){return `<div class="stats">${rs.map(r=>`<article class="stat"><div class="ico">📍</div><small>${cat(r.category)} · ${r.date}</small><h3>${esc(r.description)}</h3><p class="muted">${esc(r.location)}</p><span class="status">${r.status}</span></article>`).join('')}</div>`}
+function form(){app.innerHTML=`<section class="section form"><div><div class="kicker">NUEVO REPORTE</div><h1>Cuéntanos qué está <span>pasando.</span></h1><p class="sub">Tu información personal se usa para gestionar el caso y no se muestra públicamente.</p></div><form class="panel" onsubmit="submitReport(event)"><div class="two"><div class="field"><label>Nombre</label><input id="name" placeholder="Tu nombre (opcional)"></div><div class="field"><label>Correo electrónico o teléfono</label><input id="contact" placeholder="Para recibir actualizaciones"></div></div><div class="field"><label>Tipo de problemática *</label><div class="cats">${CATS.map(c=>`<button type="button" class="cat" data-cat="${c[1]}" onclick="pick(this)">${c[0]}</button>`).join('')}</div></div><div class="field"><label>Descripción / testimonio *</label><textarea id="desc" required placeholder="Describe qué sucede, desde cuándo y cómo afecta a la comunidad."></textarea></div><div class="two"><div class="field"><label>Ubicación aproximada *</label><input id="loc" required placeholder="Ej. Calle 10 con Carrera 20, barrio Paraíso"></div><div class="field"><label>Fecha</label><input id="date" type="date" value="${new Date().toISOString().slice(0,10)}"></div></div></form><div class="panel"><div class="field"><label>Evidencias</label><label class="drop">📤<br><b>Arrastra tus evidencias aquí o haz clic para subirlas</b><br><small>Las imágenes se previsualizan localmente en esta demo.</small><input id="files" type="file" accept="image/*" multiple></label></div></div><div class="formEnd"><span class="muted">🔒 Tus datos personales no se publican.</span><button class="btn primary" onclick="document.querySelector('form').requestSubmit()">Enviar reporte →</button></div></section>`}
+function pick(el){document.querySelectorAll('.cat').forEach(x=>x.classList.remove('sel'));el.classList.add('sel');selected=el.dataset.cat}
+async function submitReport(e){
+  e.preventDefault();
+  if(!selected){alert('Selecciona una categoría.');return}
+  if(!CRM_WEB_APP_URL || CRM_WEB_APP_URL === 'PEGA_AQUI_TU_URL_DE_APPS_SCRIPT'){
+    alert('Falta configurar la conexión: pega la URL /exec de Apps Script en CRM_WEB_APP_URL dentro del archivo HTML.');
+    return;
+  }
+  const code='PR-'+new Date().getFullYear()+'-'+String(Date.now()).slice(-5);
+  const report={
+    id:Date.now(),
+    code,
+    name:document.getElementById('name').value.trim(),
+    contact:document.getElementById('contact').value.trim(),
+    category:selected,
+    description:document.getElementById('desc').value.trim(),
+    location:document.getElementById('loc').value.trim(),
+    date:document.getElementById('date').value,
+    status:'Reporte recibido',
+    public:true
+  };
+  const submitButton=document.querySelector('.formEnd .btn');
+  if(submitButton){submitButton.disabled=true;submitButton.textContent='Enviando reporte…';}
+  try{
+    // Usamos un formulario URL-encoded para evitar la solicitud CORS preflight.
+    // Apps Script recibirá el JSON en e.parameter.payload.
+    const body=new URLSearchParams({payload:JSON.stringify(report)});
+    await fetch(CRM_WEB_APP_URL,{
+      method:'POST',
+      mode:'no-cors',
+      body
+    });
+    // Copia local para que la demo pueda mostrar el reporte en este navegador.
+    reports.unshift(report);
+    save();
+    app.innerHTML=`<section class="section"><div class="success"><div class="kicker">REPORTE ENVIADO</div><h1>¡Gracias por participar!</h1><p class="sub">Tu reporte se envió a la conexión del CRM. Como el navegador no permite leer la respuesta de Apps Script en este modo, confirma también que aparezca en la pestaña Reportes de Google Sheets.</p><div class="code">${code}</div><p class="muted">Guarda este código para consultar el reporte en este navegador.</p><button class="btn primary" onclick="go('seguimiento')">Consultar mi reporte →</button></div></section>`;
+  }catch(err){
+    if(submitButton){submitButton.disabled=false;submitButton.textContent='Enviar reporte →';}
+    alert('No se pudo enviar el reporte. Revisa tu conexión y la URL de Apps Script. Detalle: '+err.message);
+  }
+}
+function tracking(){app.innerHTML=`<section class="section"><div class="center"><div class="kicker">SEGUIMIENTO</div><h1>¿Qué pasó con <span>mi reporte?</span></h1><p class="sub">Ingresa tu código de seguimiento para consultar el estado de tu caso.</p><div class="search"><input id="q" placeholder="Ej. PR-2026-00428"><button class="btn primary" onclick="findReport()">Consultar</button></div></div><div id="result">${reports.length?'<div class="empty"><h3>Ingresa tu código de seguimiento</h3><p>El código aparece al finalizar un reporte.</p></div>':empty()}</div></section>`}
+function findReport(){let q=document.getElementById('q').value.trim().toLowerCase(),r=reports.find(x=>x.code.toLowerCase()===q);result.innerHTML=r?`<div class="case"><small class="kicker">${r.code}</small><h2>${cat(r.category)}</h2><span class="status">${r.status}</span><p class="muted">📍 ${esc(r.location)} · ${r.date}</p><p>${esc(r.description)}</p><div class="timeline"><div class="event"><b>✓ Reporte recibido</b><small> ${r.date}</small><p>El reporte fue registrado en la plataforma.</p></div><div class="event"><b>○ En revisión</b><p>Esta etapa se actualizará cuando el equipo responsable revise el caso.</p></div><div class="event"><b>○ En proceso</b><p>El estado cambiará cuando exista una gestión en curso.</p></div><div class="event"><b>○ Solucionado</b><p>El caso se marcará como solucionado cuando corresponda.</p></div></div></div>`:`<div class="empty"><h3>No encontramos ese código</h3><p>Verifica que esté escrito exactamente como aparece en tu confirmación.</p></div>`}
+function mapa(){app.innerHTML=`<section class="section"><div class="kicker">MAPA COMUNITARIO</div><h1>Problemáticas del <span>Paraíso.</span></h1><p class="sub">Vista preparada para conectar un mapa real con ubicaciones de los reportes. No se muestran datos personales.</p><div class="empty" style="height:430px;display:grid;place-content:center;background:linear-gradient(135deg,#dcefee,#eef7f7)"><div style="font-size:55px">🗺️</div><h2 style="font-size:25px">Mapa comunitario</h2><p>${reports.length?'Hay '+reports.length+' reportes registrados.':'Aún no existen reportes con ubicación pública.'}</p></div></section>`}
+function community(){app.innerHTML=`<section class="section"><div class="kicker">COMUNIDAD</div><h1>Lo que está pasando <span>en nuestro barrio.</span></h1><p class="sub">Explora reportes públicos sin exponer información personal.</p>${reports.length?cards(reports):empty()}</section>`}
+function info(){app.innerHTML=`<section class="section"><div style="max-width:750px"><div class="kicker">SOBRE EL PROYECTO</div><h1>La tecnología como puente entre <span>la comunidad</span> y sus soluciones.</h1><p class="sub">Paraíso Conecta nace de una pregunta: ¿cómo una página web puede ayudar a los habitantes del barrio Paraíso a registrar y visibilizar las problemáticas de su comunidad y hacer seguimiento a sus reportes?</p><button class="btn primary" onclick="go('reportar')">Quiero participar →</button></div></section>`}
+function cat(k){let x=CATS.find(c=>c[1]===k);return x?x[0]:'Problemática'}function esc(s=''){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+render();
+</script>
+</body>
+</html>
